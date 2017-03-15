@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import style from './css-app'
+import UserMain from './components/UserMain.jsx'
 
 class App extends Component {
   constructor (props) {
@@ -10,9 +11,12 @@ class App extends Component {
   render () {
     return (
       <div style={style}>
-        // all the things
+        <header>
+
+        </header>
+        <UserMain />
       </div>
-    )
+    );
   }
 }
 
