@@ -1,11 +1,30 @@
 const express = require('express')
+/* * * MULTER FOR EXTRACTING IMAGE DATA * * */
+const multer = require('multer')
+/* * * AXIOS FOR PROMISES * * */
+const axios = require('axios')
+
+const { extractText } = require('./utilities.js')
 
 const app = express()
+const imgUpload = multer({dest: 'temp/'})
+
+process.env.GOOGLE_APPLICATION_CREDENTIALS = './credentials/googleServiceAccountKeys.json'
 
 app.use(express.static('../client/build'))
 
-/* * * Use Port 9000 with Build System * * */
+/* * * ON IMAGE UPLOAD * * */
+app.post('/image', imgUpload.single('image'), (req, res) => {
+  const { path } = req.file
 
-app.listen(9000, function () {
-  console.log('Hello world, you rock! Listening on Port 9000.')
+  extractText(path)
+
+  .then((text) => {
+    let response = { text }
+    res.status(200).json(response)
+  })
+})
+
+app.listen(9000, () => {
+  console.log('Ready and listening on port 9000')
 })

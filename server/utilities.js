@@ -1,9 +1,13 @@
-/* * * Write your kickass utility functions here! * * */
+const Vision = require('@google-cloud/vision')
 
-exports.someUtility = () => {
+exports.extractText = (filePath) => {
+/* * * Google Cloud Vision * * */
+  const googleCV = Vision()
 
-}
-
-exports.someOtherUtility = () => {
-
+  return googleCV.detectText(filePath)
+  .then((response) => {
+    let text = response[0][0]
+    return text
+  })
+  .catch(error => console.log(error))
 }
