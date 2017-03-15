@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import UserBillsTableEntry from 'react';
 
 class UserBillsTable extends Component {
   constructor(props) {
@@ -18,7 +19,7 @@ class UserBillsTable extends Component {
 
     return (
       <div>
-
+        <UserBillsTableEntry />
       </div>
     );
   }

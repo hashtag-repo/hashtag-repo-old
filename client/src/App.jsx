@@ -1,3 +1,4 @@
+<<<<<<< HEAD:client/src/App.jsx
 import React, { Component } from 'react'
 import style from './css-app'
 import UserMain from './components/UserMain.jsx'
@@ -21,3 +22,6 @@ class App extends Component {
 }
 
 export default App
+=======
+
+>>>>>>> upstream/master:client/src/App.js
