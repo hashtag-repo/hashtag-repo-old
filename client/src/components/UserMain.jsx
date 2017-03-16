@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import UserSummary from './UserSummary.jsx';
-import UserBillsTable from './UserBillsTable';
+import UserBillsTable from './UserBillsTable.jsx';
 
 class UserMain extends Component {
   constructor(props) {
@@ -18,7 +18,8 @@ class UserMain extends Component {
 
 
     return (
-      <div>
+      <div className="usermain-div">
+        UserMain
         <UserSummary />
         <UserBillsTable />
       </div>
