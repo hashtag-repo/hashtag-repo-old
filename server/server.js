@@ -11,7 +11,7 @@ const imgUpload = multer({dest: 'temp/'})
 
 process.env.GOOGLE_APPLICATION_CREDENTIALS = './credentials/googleServiceAccountKeys.json'
 
-app.use(express.static('../client/build'))
+app.use(express.static('../client/public'))
 
 /* * * ON IMAGE UPLOAD * * */
 app.post('/image', imgUpload.single('image'), (req, res) => {
