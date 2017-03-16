@@ -17,7 +17,7 @@ class UserBillsTableEntry extends Component {
     
 
     return (
-      <div>
+      <div className="userbillstableentry-div">
 
       </div>
     );
