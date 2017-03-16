@@ -1,10 +1,7 @@
-//config file
-var mongoose = require('mongoose');
+var mongoose = require('../server/node_modules/mongoose');
+mongoose.connect('mongodb://localhost/splitlyDB');
 
-
-mongoose.connect('mongodb://localhost/splitlydb');
-
-db = mongoose.connection();
+var db = mongoose.connection;
 
 db.on('error', function() {
   console.log('error connecting to database');
@@ -14,7 +11,7 @@ db.once('open', function(){
   console.log('database is connected');
 });
 
-module.exports = db;
+module.exports = mongoose;
 //use helper functions from the server configuration to direct the route through
 // require the models in the helper functions
 // do the work in the helper functions 
