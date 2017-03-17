@@ -1,4 +1,10 @@
 //request-handlers
+//multer stores img file, look into how to store reference to it in mongo
+//path vs actual image
+//attaches image info in two properties - request.file.path - and file
+//unique pathname exists for the image
+//helper function to destroy temp files
+
 var request = require('../node_modules/request');
 var db = require('../../db/config');
 var User = require('../../models/user');
