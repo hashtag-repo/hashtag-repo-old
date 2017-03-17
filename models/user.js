@@ -1,25 +1,29 @@
-var mongoose = require('mongoose');
-var request = require('request');
+var mongoose = require('../db/config');
+var request = require('../server/node_modules/request'); 
+
 
 var userSchema = mongoose.Schema({
   id: String,
+  username: {type: String, index: { unique: true }},
   firstName: String,
   lastName: String,
-  username: String,
+  email: {type: String, index: { unique: true }},
   password: String,
-  role: String,
-  bills: [{id: String, code: String}],
+  bills: [{id: String, code: String}]
 });
 
 var User = mongoose.model('User', userSchema);
 
-//user methods... 
-  //maybe a method to check if user exists
-  //add bill to account
-  //modify bill
-
-  //get all user bills - in bills schema..
+var newUser = new User({
+  username: 'someone else',
+  firstName: 'WithD',
+  lastName: 'Notsure',
+  email: 'justsomeemail@somemail.com',
+  password: 'password',
+  bills: []
+});
 
 
 
 module.exports = User;
+
